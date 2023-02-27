@@ -19,12 +19,30 @@ Das Projekt visualisiert in einem Graphen die Beziehungen zwischen Charakteren u
 
 ### 27.02.2023
 
-Sanaz, Till und Martin setzten sich mit den Projektleitern zusammen um das Projekt zu besprechen. Folgende Themen wurden besprochen:
-- Als erstes mit einem Dokuemnt anfangen.
-- Datensatz zu Sherlock Holmes gibt es bei NLTK
-- Charaktere identifizieren (Named Entity Extraction)
-- Themen identifizieren (Topic Modelling)
-- Charaktere und Themen in einem Graphen visualisieren
+We sat down with our Product Owners to discuss the Project. THeser were the results:
+- Start off with one document
+- Good datasets are available on NLTK
+- Identify the characters (Entity Name Recognition)
+- Identify the topics (Topic Modelling)
+- Create associations between characters and topics
+- Visualize the associations in a graph
+- Three main working areas: **FrontEnd/BackeEnd**, **Entity Name Recognition**, **Topic Modelling**
+
+Eintrag von Martin 14:05
+
+We split up the working load according to the three main working areas. Martin will work on the FrontEnd/BackEnd, Sanaz on the Entity Name Recognition and Till on the Topic Modelling.#
+
+Sanaz is reading up on her topic, Till is in developement (?) and Martin is still evaluating the WebApp framework.
+
+
+
+### 28.03.2023
+
+### 01.03.2023
+
+### 02.03.2023
+
+### 03.03.2023
 
 ## Über uns
 
