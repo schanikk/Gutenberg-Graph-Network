@@ -15,6 +15,8 @@
 
 Our project makes use of already built models from "spaCy" to create and visualize associations between characters and topics in a book from the [Project Gutenberg](https://www.gutenberg.org/) or from the complete corpus.
 
+## Technologies
+
 ## Documentation
 
 ### 27.02.2023
@@ -33,6 +35,11 @@ Entry from Martin 14:05
 We split up the working load according to the three main working areas. Martin will work on the FrontEnd/BackEnd, Sanaz on the Entity Name Recognition and Till on the Topic Modelling.
 
 Sanaz is reading up on her topic, Till is in developement (?) and Martin is still evaluating the WebApp framework.
+
+
+Entry from Martin 15:44
+
+Martin decided to use Django as the WebApp framework. He is now watching his first tutorial video in order to set up the project and start with the FrontEnd/BackEnd.
 
 
 
