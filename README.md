@@ -13,7 +13,7 @@
 
 ## Über dieses Projekt
 
-Das Projekt visualisiert in einem Graphen die Beziehungen zwischen Charakteren und Themen aus Werken des Gutenberg-Corpus.
+Our project makes use of already built models from "spaCy" to create and visualize associations between characters and topics in a book from the [Project Gutenberg](https://www.gutenberg.org/) or from the complete corpus.
 
 ## Dokumentation
 
