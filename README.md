@@ -2,13 +2,13 @@
 
 ## Nützliche Links 
 
-[Python Dokumentation](https://docs.python.org/3.11/library/index.html)
-[Project Gutenberg](https://www.gutenberg.org/)
-[Natural Language Toolkit](https://www.nltk.org/)
-[spaCy](https://spacy.io/)
-[GitHub Projectboard](https://github.com/users/schanikk/projects/3/views/1?layout=board)
+- [Python Dokumentation](https://docs.python.org/3.11/library/index.html)
+- [Project Gutenberg](https://www.gutenberg.org/)
+- [Natural Language Toolkit](https://www.nltk.org/)
+- [spaCy](https://spacy.io/)
+- [GitHub Projectboard](https://github.com/users/schanikk/projects/3/views/1?layout=board)
 
-[Beispielprojekt zu Gutenberg](https://dharc-org.github.io/mythlod/index.html)
+- [Beispielprojekt zu Gutenberg](https://dharc-org.github.io/mythlod/index.html)
 
 ## Über dieses Projekt
 
