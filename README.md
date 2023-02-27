@@ -1,6 +1,6 @@
-# Gutemberg-Graph-Network
+# Gutenberg-Graph-Network
 
-## Nützliche Links 
+## Useful links 
 | Links  |Beschreibung   |
 |---|---|
 | [Python Dokumentation](https://docs.python.org/3.11/library/index.html)  | Doku zu Python.  |
@@ -11,11 +11,11 @@
 | [Beispielprojekt zu Gutenberg](https://dharc-org.github.io/mythlod/index.html)  | Beispielimplementation unserers Projekts  |
 |   |   |
 
-## Über dieses Projekt
+## About the Project
 
 Our project makes use of already built models from "spaCy" to create and visualize associations between characters and topics in a book from the [Project Gutenberg](https://www.gutenberg.org/) or from the complete corpus.
 
-## Dokumentation
+## Documentation
 
 ### 27.02.2023
 
@@ -28,7 +28,7 @@ We sat down with our Product Owners to discuss the Project. These were the resul
 - Visualize the associations in a graph
 - Three main working areas: **FrontEnd/BackeEnd**, **Entity Name Recognition**, **Topic Modelling**
 
-Eintrag von Martin 14:05
+Entry from Martin 14:05
 
 We split up the working load according to the three main working areas. Martin will work on the FrontEnd/BackEnd, Sanaz on the Entity Name Recognition and Till on the Topic Modelling.
 
@@ -44,7 +44,7 @@ Sanaz is reading up on her topic, Till is in developement (?) and Martin is stil
 
 ### 03.03.2023
 
-## Über uns
+## About Us
 
 - Till
 - Sanaz
