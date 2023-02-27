@@ -19,7 +19,7 @@ Das Projekt visualisiert in einem Graphen die Beziehungen zwischen Charakteren u
 
 ### 27.02.2023
 
-We sat down with our Product Owners to discuss the Project. THeser were the results:
+We sat down with our Product Owners to discuss the Project. These were the results:
 - Start off with one document
 - Good datasets are available on NLTK
 - Identify the characters (Entity Name Recognition)
@@ -30,7 +30,7 @@ We sat down with our Product Owners to discuss the Project. THeser were the resu
 
 Eintrag von Martin 14:05
 
-We split up the working load according to the three main working areas. Martin will work on the FrontEnd/BackEnd, Sanaz on the Entity Name Recognition and Till on the Topic Modelling.#
+We split up the working load according to the three main working areas. Martin will work on the FrontEnd/BackEnd, Sanaz on the Entity Name Recognition and Till on the Topic Modelling.
 
 Sanaz is reading up on her topic, Till is in developement (?) and Martin is still evaluating the WebApp framework.
 
