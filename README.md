@@ -4,7 +4,7 @@
 
 Das Projekt visualisiert in einem Graphen die Beziehungen zwischen Charakteren und Themen aus Werken des Gutenberg-Corpus.
 
-## Dokumentation
+## Dokumentation fpr alle
 
 ### 27.02.2023
 
