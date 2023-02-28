@@ -1,0 +1,30 @@
+body{
+    color: darkred;
+}
+
+/* Path: static\style.css */
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    width: 50%;
+}
+
+.header{
+    text-align: center;
+}
+
+.data-container{
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 1 1 1;
+}
+
+.col-books, .col-topics, .col-persons{
+    border-style: solid;
+    border-color: darkred;
+    width: 100%;
+    text-align: center;
+}
