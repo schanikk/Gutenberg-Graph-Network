@@ -1,15 +1,13 @@
-body{
-    color: darkred;
-}
-
-/* Path: static\style.css */
-
 .main-container{
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin: auto;
-    width: 50%;
+    width: 100%;
+}
+
+body{
+    color: darkred;
 }
 
 .header{
@@ -18,13 +16,19 @@ body{
 
 .data-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-basis: 1 1 1;
+    margin-top: 30px;
 }
 
 .col-books, .col-topics, .col-persons{
     border-style: solid;
     border-color: darkred;
-    width: 100%;
+    width: 20%;
     text-align: center;
+}
+
+ul{
+    list-style: none;
+    text-align: left
 }
