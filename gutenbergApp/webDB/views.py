@@ -21,7 +21,7 @@ class ParagraphViewSet(viewsets.ModelViewSet):
 
 
 class CharakterSet(viewsets.ModelViewSet):
-    queryset = Charakter.objects.all().order_by('-date_joined')
+    queryset = Charakter.objects.all()
     serializer_class = CharakterSerializer
     permission_classes = [permissions.IsAuthenticated]
 
