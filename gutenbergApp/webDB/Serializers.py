@@ -1,6 +1,6 @@
-from django.contrib.auth.models import Book, Paragraph, Character, Topic
+from .models import Book, Paragraph, Character, Topic
 from rest_framework import serializers
-from .models import Snippet, LANGUAGE_CHOICES, STYLE_CHOICES
+
 
 
 class BookSerializer(serializers.ModelSerializer):
