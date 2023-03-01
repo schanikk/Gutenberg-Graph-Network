@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
     <title>Gutenberg</title>
 </head>
 <body>
@@ -13,19 +13,42 @@
         <div class="header">
             <h1>Project: Gutenberg</h1>
             <p>Entity Name Recognition and Topic Modeling applied on the Gutenberg Corpus</p>
+            <p>Pick a book and start filtering:</p>
         </div>
         <div class="data-container">
             <div class="col-books">
                 <h3>Books</h3>
+                <ul class="list-books">
+                    <li>Lorem Ipsum 1</li>
+                    <li>Lorem Ipsum 2</li>
+                    <li>Lorem Ipsum 3</li>
+                    <li>Lorem Ipsum 4</li>
+                    <li>Lorem Ipsum 5</li>
+                </ul>
             </div>
             <div class="col-persons">
                 <h3>Persons</h3>
+                <ul class="list-persons">
+                    <li>Lorem Ipsum 1</li>
+                    <li>Lorem Ipsum 2</li>
+                    <li>Lorem Ipsum 3</li>
+                    <li>Lorem Ipsum 4</li>
+                    <li>Lorem Ipsum 5</li>
+                </ul>
             </div>
             <div class="col-topics">
                 <h3>Topics</h3>
+                <ul class="list-topics">
+                    <li>Lorem Ipsum 1</li>
+                    <li>Lorem Ipsum 2</li>
+                    <li>Lorem Ipsum 3</li>
+                    <li>Lorem Ipsum 4</li>
+                    <li>Lorem Ipsum 5</li>
+                </ul>
             </div>
         </div>
     </div>
+    <script src="{% static 'scripts/index.js' %}" ></script>
 
 </body>
 </html>
