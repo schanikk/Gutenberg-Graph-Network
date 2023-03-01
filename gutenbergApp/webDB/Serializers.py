@@ -1,26 +1,26 @@
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import Book, Paragraph, Charakter, Topic
 from rest_framework import serializers
 from .models import Snippet, LANGUAGE_CHOICES, STYLE_CHOICES
 
 
 class BookSerializer(serializers.ModelSerializer):
     class Meta:
-        model = 
+        model = Book
         fields = ['id','name', 'publication', 'author']
 
 class ParagraphSerializer(serializers.ModelSerializer):
     class Meta:
-        model = 
+        model = Paragraph
         fields = ['id', 'para_number', 'parent_document', 'raw_text']
 
 class CharakterSerializer(serializers.ModelSerializer):
     class Meta:
-        model = 
+        model = Charakter
         fields = ['id', 'Name', 'Vorname', 'Nachname', 'parent_document']
 
     
 class TopicSerializer(serializers.ModelSerializer):
     class Meta:
-        model = 
+        model = Topic
         fields = ['id', 'topic_name', 'keywords']
 
