@@ -1,13 +1,19 @@
+body{
+    color: darkred;
+    padding: 50px;
+}
+
+.d-none{
+    display: none;
+}
+
 .main-container{
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin: auto;
-    width: 100%;
-}
-
-body{
-    color: darkred;
+    
 }
 
 .header{
@@ -21,14 +27,11 @@ body{
     margin-top: 30px;
 }
 
-.col-books, .col-topics, .col-persons{
-    border-style: solid;
-    border-color: darkred;
-    width: 20%;
-    text-align: center;
+.col-books  li:hover, .col-persons  li:hover{
+    cursor: pointer;
 }
 
-ul{
-    list-style: none;
-    text-align: left
+
+.reset-btn{
+    align-self: flex-start;
 }
