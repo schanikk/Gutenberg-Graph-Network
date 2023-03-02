@@ -2,14 +2,53 @@ const bookList = document.querySelector(".list-books");
 const personList = document.querySelector(".list-persons");
 const topicList = document.querySelector(".list-topics");
 
-const bookItems = bookList.querySelectorAll("ul > li");
-const personItems = personList.querySelectorAll("ul > li");
-const topicItems = topicList.querySelectorAll("ul > li");
+let bookItems;
+let personItems;
+let topicItems;
 
 const resetBtn = document.querySelector(".reset-btn");
 
-console.log(bookItems);
 console.log(personItems);
+let obj;
+
+async function getData(url = "http://localhost:8000/gutenberg/test/") {
+  const response = await fetch(url);
+  return response.json();
+}
+
+getData()
+  .then((data) => {
+    obj = data;
+    console.log(obj);
+  })
+  .then(() => {
+    Object.keys(obj).forEach((item) => {
+      bookList.innerHTML +=
+        "<li class='list-group-item d-flex justify-content-between align-items-center'>" +
+        item +
+        "<span class='badge text-bg-info rounded-pill'>14</span></li>";
+    });
+    Object.keys(obj).forEach((item) => {
+      personList.innerHTML +=
+        "<li class='list-group-item d-flex justify-content-between align-items-center'>" +
+        item +
+        "<span class='badge text-bg-info rounded-pill'>14</span></li>";
+    });
+    Object.keys(obj).forEach((item) => {
+      topicList.innerHTML +=
+        "<li class='list-group-item d-flex justify-content-between align-items-center'>" +
+        item +
+        "<span class='badge text-bg-info rounded-pill'>14</span></li>";
+    });
+    bookItems = bookList.querySelectorAll("ul > li");
+    personItems = personList.querySelectorAll("ul > li");
+    topicItems = topicList.querySelectorAll("ul > li");
+    addAllListeners();
+  });
+
+// function sleep(ms) {
+//   return new Promise((resolve) => setTimeout(resolve, ms));
+// }
 
 let selectedBook = "";
 let selectedPerson = "";
@@ -21,19 +60,25 @@ function addListeners(listeningItems, affectedItems, selectedListener) {
         listeningItem.style.opacity = "0.5";
       }
 
-      if (selectedListener !== e.target.innerHTML) {
-        selectedListener = e.target.innerHTML;
+      if (selectedListener !== e.target.innerText.match(/[a-zA-Z]/g).join("")) {
+        selectedListener = e.target.innerText.match(/[a-zA-Z]/g).join("");
         e.target.style.opacity = "1";
       } else {
         e.target.style.opacity = "1";
       }
       console.clear();
       for (let affectedItem of affectedItems) {
-        console.log(affectedItems);
-        console.log("affected: ", affectedItem.innerHTML);
-        console.log("selected: ", selectedListener);
+        // console.log(affectedItems);
+        // console.log(
+        //   "affected: ",
+        //   affectedItem.innerText.match(/[a-zA-Z]/g).join("")
+        // );
+        // console.log("selected: ", selectedListener);
 
-        if (affectedItem.innerHTML !== selectedListener) {
+        if (
+          affectedItem.innerText.match(/[a-zA-Z]/g).join("") !==
+          selectedListener
+        ) {
           affectedItem.classList.remove("d-flex");
           affectedItem.classList.add("d-none");
         } else {
@@ -45,23 +90,50 @@ function addListeners(listeningItems, affectedItems, selectedListener) {
     });
   }
 }
-addListeners(bookItems, personItems, selectedBook);
-addListeners(personItems, topicItems, selectedPerson);
 
-resetBtn.addEventListener("click", (e) => {
-  for (let bookItem of bookItems) {
-    bookItem.classList.remove("d-none");
-    bookItem.classList.add("d-flex");
-    bookItem.style.opacity = "1";
-  }
-  for (let personItem of personItems) {
-    personItem.classList.remove("d-none");
-    personItem.classList.add("d-flex");
-    personItem.style.opacity = "1";
-  }
-  for (let topicItem of topicItems) {
-    topicItem.classList.remove("d-none");
-    topicItem.classList.add("d-flex");
-    topicItem.style.opacity = "1";
-  }
-});
+function addAllListeners() {
+  addListeners(bookItems, personItems, selectedBook);
+  addListeners(personItems, topicItems, selectedPerson);
+  resetBtn.addEventListener("click", (e) => {
+    for (let bookItem of bookItems) {
+      bookItem.classList.remove("d-none");
+      bookItem.classList.add("d-flex");
+      bookItem.style.opacity = "1";
+    }
+    for (let personItem of personItems) {
+      personItem.classList.remove("d-none");
+      personItem.classList.add("d-flex");
+      personItem.style.opacity = "1";
+    }
+    for (let topicItem of topicItems) {
+      topicItem.classList.remove("d-none");
+      topicItem.classList.add("d-flex");
+      topicItem.style.opacity = "1";
+    }
+  });
+}
+
+// window.addEventListener("load", function () {
+//   Object.keys(obj).forEach((item) => {
+//     bookList.innerHTML +=
+//       "<li class='list-group-item d-flex justify-content-between align-items-center'>" +
+//       item +
+//       "<span class='badge text-bg-info rounded-pill'>14</span></li>";
+//   });
+//   Object.keys(obj).forEach((item) => {
+//     personList.innerHTML +=
+//       "<li class='list-group-item d-flex justify-content-between align-items-center'>" +
+//       item +
+//       "<span class='badge text-bg-info rounded-pill'>14</span></li>";
+//   });
+//   Object.keys(obj).forEach((item) => {
+//     topicList.innerHTML +=
+//       "<li class='list-group-item d-flex justify-content-between align-items-center'>" +
+//       item +
+//       "<span class='badge text-bg-info rounded-pill'>14</span></li>";
+//   });
+//   bookItems = bookList.querySelectorAll("ul > li");
+//   personItems = personList.querySelectorAll("ul > li");
+//   topicItems = topicList.querySelectorAll("ul > li");
+//   addAllListeners();
+// });
