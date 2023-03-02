@@ -22,6 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('gutenberg/', include('app.urls')),
     path('__debug__/', include('debug_toolbar.urls')),
-    path('api-auth/', include('webDB.urls'))
-    
-]
+    path('api-auth/', include('webDB.urls')),
+    path('api/', include('webDB.urls'))
+    ]
