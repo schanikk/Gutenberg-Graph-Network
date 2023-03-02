@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import debug_toolbar
+import webDB
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('gutenberg/', include('app.urls')),
-    path('__debug__/', include('debug_toolbar.urls'))
+    path('__debug__/', include('debug_toolbar.urls')),
+    path('api-auth/', include('webDB.urls'))
+    
 ]

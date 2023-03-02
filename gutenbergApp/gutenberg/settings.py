@@ -90,16 +90,16 @@ WSGI_APPLICATION = 'gutenberg.wsgi.application'
 # ToDo: Adjust to Database in Container
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'your_db_name', 
-        'USER': 'postgres',
-        'PASSWORD': 'your_db_password',
-        'HOST': '127.0.0.1', 
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'your_db_name', 
+#         'USER': 'postgres',
+#         'PASSWORD': 'your_db_password',
+#         'HOST': '127.0.0.1', 
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation

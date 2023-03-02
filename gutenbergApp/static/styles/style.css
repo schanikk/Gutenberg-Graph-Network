@@ -1,0 +1,37 @@
+body{
+    color: darkred;
+    padding: 50px;
+}
+
+.d-none{
+    display: none;
+}
+
+.main-container{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    
+}
+
+.header{
+    text-align: center;
+}
+
+.data-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-basis: 1 1 1;
+    margin-top: 30px;
+}
+
+.col-books  li:hover, .col-persons  li:hover{
+    cursor: pointer;
+}
+
+
+.reset-btn{
+    align-self: flex-start;
+}
