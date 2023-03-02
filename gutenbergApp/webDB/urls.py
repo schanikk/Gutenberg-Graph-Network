@@ -5,7 +5,7 @@ from webDB import views
 router = routers.DefaultRouter()
 router.register(r'book', views.BookViewSet)
 router.register(r'paragraph', views.ParagraphViewSet)
-router.register(r'charakter', views.CharacterViewSet)
+router.register(r'character', views.CharacterViewSet)
 router.register(r'topic', views.TopicViewSet)
 
 # Wire up our API using automatic URL routing.
