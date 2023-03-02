@@ -13,7 +13,7 @@ class NamedEntity():
         temp_list = list()
         for ent in doc.ents:
             if ent.label_ == "PERSON" and ent.text not in self.filter_words:
-                temp_list.append({'text': ent.text, 'label':ent.label_, 'start_char': ent.start, 'end_char': ent.end})
+                temp_list.append(ent.text)
 
         return temp_list
 

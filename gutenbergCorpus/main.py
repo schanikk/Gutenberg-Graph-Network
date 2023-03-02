@@ -49,8 +49,8 @@ def filterAndCombine(df, filenames):
 
 def main():
     # Initialize Models
- #   tm_model = TopicModel()
- #   ner_model = NamedEntity()
+    tm_model = TopicModel()
+    ner_model = NamedEntity()
 
     # Get all Meta Data
     df_meta = loadMeta()
@@ -69,19 +69,27 @@ def main():
     #Only 100 books
     df_filtered = df_filtered[:1000]
 
-
-    df_filtered.to_json("./data/checkpoint/temporarydocs.json", orient='records')
-
-    # Train TopicModell
+    df_filtered = df_filtered.explode('paras')
 
 
 
-    # retrieve document_info
+    #df_filtered.to_json("./data/checkpoint/temporarydocs.json", orient='records')
+
+    data_ = list(df_filtered.paras)
+
+    # Train TopicModel
+    topics, probs = tm_model.compute_topics(data_)
+    
+    df_filtered['topics'] = topics
+    df_filtered['probs'] = probs
+
 
     # for each document -> NER
-
+    df_filtered['Character'] = df_filtered.paras.apply(ner_model.processAndExtract)
 
     # save to json
+
+    df_filtered.to_json("./data/final_data.json", orient='records')
 
 
 
