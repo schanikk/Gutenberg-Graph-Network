@@ -3,20 +3,22 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import UploadFileForm
 from .models import Book, Topic, Character, Sentence, Character2Sentence
+import json
+from django.core import serializers
 
 def api_home(request,*args, **kwargs):
     return JsonResponse({"message":"Hello From the API!!!"})
 
 
 def collection(request,*args, **kwargs):
-    response = Book.objects.all()
+    response = serializers.serialize("json", Book.objects.all())
     return JsonResponse(response, safe=False)
 
 
 def book(request,*args, **kwargs):
     book = Book.objects.get(id=id)
     response = book.characters.all()
-    return JsonResponse(response)
+    return JsonResponse({"data" : list(response)})
 
 
 def character(request,*args, **kwargs):

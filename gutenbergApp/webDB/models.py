@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Book(models.Model):
-    bookID = models.DateTimeField(auto_now_add=True)
+    bookID =  models.CharField(max_length=100, blank=True, default='')
     title = models.CharField(max_length=100, blank=True, default='')
     author = models.TextField()
     # class Meta:

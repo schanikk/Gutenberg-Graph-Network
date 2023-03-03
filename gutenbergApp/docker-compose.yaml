@@ -1,3 +1,6 @@
+networks:
+  mynet:
+
 services:
   web:
     build: .
@@ -6,12 +9,12 @@ services:
       - .:/code
     ports:
       - "8000:8000"
-    environment:
-      - POSTGRES_NAME=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
     depends_on:
       - db
+    links:
+      - db:db
+    networks:
+      - djangonetwork
   db:
     image: postgres
     volumes:
@@ -20,3 +23,9 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+    networks:
+      - djangonetwork
+    
+networks:
+    djangonetwork:
+        driver: bridge

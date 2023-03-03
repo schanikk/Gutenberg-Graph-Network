@@ -142,3 +142,5 @@ node_modules/
 # node
 *node_modules/
 >>>>>>> 48227e0d7f4cb9592d98d24672bbb0f5ce101044
+
+gutenbergApp/data

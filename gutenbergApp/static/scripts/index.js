@@ -12,8 +12,8 @@ let topics;
 
 const resetBtn = document.querySelector(".reset-btn");
 const COLL_API = "http://localhost:8000/api/collection/";
-const BOOK_API = "http://localhost:8000/api/book/";
-const CHAR_API = "http://localhost:8000/api/character/";
+// const BOOK_API = "http://localhost:8000/api/book/";
+// const CHAR_API = "http://localhost:8000/api/character/";
 
 function createListEntry(item, ...column) {
   if (column[0] == "topic") {
@@ -48,23 +48,22 @@ getAllData().then(() => {
 });
 
 async function getAllData() {
-  await getData(COLL_API)
-    .then((data) => {
-      books = data.data;
-      console.log(books);
-    })
-    .then(
-      await getData(BOOK_API).then((data) => {
-        persons = data.data;
-        console.log(persons);
-      })
-    )
-    .then(
-      await getData(CHAR_API).then((data) => {
-        topics = data.data;
-        console.log(topics);
-      })
-    );
+  await getData(COLL_API).then((data) => {
+    books = data.data;
+    console.log(books);
+  });
+  // .then(
+  //   await getData(BOOK_API).then((data) => {
+  //     persons = data.data;
+  //     console.log(persons);
+  //   })
+  // )
+  // .then(
+  //   await getData(CHAR_API).then((data) => {
+  //     topics = data.data;
+  //     console.log(topics);
+  //   })
+  // );
 }
 
 // function sleep(ms) {
@@ -109,12 +108,10 @@ function addListeners(listeningItems, affectedItems, selectedListener) {
       //     affectedItem.style.opacity = "1";
       //   }
       // }
-      persons = await fetch(BOOK_API + item.dataset.dbid).then((response) =>
-        response.json().then((data) => {
-          return data.data;
-        })
-      );
-
+      // persons = await fetch(BOOK_API + item.dataset.dbid).then((response) =>
+      //   response.json().then((data) => {
+      //     return data.data;
+      //   })
       if (personList.innerHTML !== "") {
         personList.innerHTML = "";
       }
