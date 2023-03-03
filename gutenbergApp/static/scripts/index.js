@@ -7,8 +7,8 @@ let personItems;
 let topicItems;
 
 const resetBtn = document.querySelector(".reset-btn");
-const BOOK_API = "http://localhost:8000/api/collection/";
-const COLL_API = "http://localhost:8000/api/book/";
+const COLL_API = "http://localhost:8000/api/collection/";
+const BOOK_API = "http://localhost:8000/api/book/";
 const CHAR_API = "http://localhost:8000/api/character/";
 
 let obj;
