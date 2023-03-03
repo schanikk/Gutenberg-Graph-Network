@@ -8,6 +8,6 @@ from webDB import views
 urlpatterns = [
     path('', views.api_home),
     path('collection/', views.collection),
-    path('book/', views.book),
-    path('character/', views.character)
+    path('book/<int:id>', views.book),
+    path('character/<int:id>', views.character)
 ]
