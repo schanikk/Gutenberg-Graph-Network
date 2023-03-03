@@ -10,7 +10,7 @@ def api_home(request,*args, **kwargs):
 
 def collection(request,*args, **kwargs):
     response = Book.objects.all()
-    return JsonResponse(response)
+    return JsonResponse(response, safe=False)
 
 
 def book(request,*args, **kwargs):
