@@ -1,6 +1,5 @@
 from django.db import models
 
-
 # Create your models here.
 class Book(models.Model):
     bookID = models.DateTimeField(auto_now_add=True)
