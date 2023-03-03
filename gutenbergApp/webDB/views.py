@@ -31,7 +31,7 @@ def book(request,*args, **kwargs):
 def character(request,*args, **kwargs):
     response = {
             "data": [
-                {"id":1, "name":"Topic1", "couint":25},
+                {"id":1, "name":"Topic1", "count":25},
                 {"id":2, "name":"Topic2", "count":5},
                 {"id":3, "name":"Topic3", "count":55},
                 {"id":4, "name":"Topic4", "count":12},
