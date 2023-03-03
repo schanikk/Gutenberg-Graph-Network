@@ -8,11 +8,12 @@ let topicItems;
 
 const resetBtn = document.querySelector(".reset-btn");
 
-console.log(personItems);
 let obj;
 
 async function getData(url = "http://localhost:8000/api/book/") {
+  console.log(url);
   const response = await fetch(url);
+  console.log(response);
   return response.json();
 }
 
