@@ -7,17 +7,20 @@ let personItems;
 let topicItems;
 
 const resetBtn = document.querySelector(".reset-btn");
+const BOOK_API = "http://localhost:8000/api/collection/";
+const COLL_API = "http://localhost:8000/api/book/";
+const CHAR_API = "http://localhost:8000/api/character/";
 
 let obj;
 
-async function getData(url = "http://localhost:8000/api/book/") {
+async function getData(url) {
   console.log(url);
   const response = await fetch(url);
   console.log(response);
   return response.json();
 }
 
-getData()
+getData(COLL_API)
   .then((data) => {
     obj = data.data;
     console.log(obj);
