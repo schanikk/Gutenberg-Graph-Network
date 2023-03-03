@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import UploadFileForm
-from .models import Book, Topic, Character, Sentence, Character2Sentence
+from .models import Book, Character#Topic, Sentence, Character2Sentence
 import json
 from django.core import serializers
 
@@ -11,7 +11,10 @@ def api_home(request,*args, **kwargs):
 
 
 def collection(request,*args, **kwargs):
+   
     response = serializers.serialize("json", Book.objects.all())
+    print(response)
+    print(JsonResponse(response, safe=False))
     return JsonResponse(response, safe=False)
 
 

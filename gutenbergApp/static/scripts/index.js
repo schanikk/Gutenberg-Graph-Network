@@ -17,14 +17,15 @@ const COLL_API = "http://localhost:8000/api/collection/";
 
 function createListEntry(item, ...column) {
   if (column[0] == "topic") {
-    return `<li class="list-group-item d-flex justify-content-between align-items-center" data-dbid='${item.id}'>${item.name}<span class="badge text-bg-warning rounded-pill">14</span></li>`;
+    return `<li class="list-group-item d-flex justify-content-between align-items-center" data-dbid='${item.bookID}'>${item.bookName}<span class="badge text-bg-warning rounded-pill">14</span></li>`;
   }
-  return `<li class="list-group-item d-flex justify-content-between align-items-center" data-dbid='${item.id}'>${item.name}</li>`;
+  return `<li class="list-group-item d-flex justify-content-between align-items-center" data-dbid='${item.bookID}'>${item.bookName}</li>`;
 }
 
 function fillUpColumns(books, persons, topics) {
   books.forEach((item) => {
-    bookList.innerHTML += createListEntry(item);
+    console.log(item.fields);
+    bookList.innerHTML += createListEntry(item.fields);
   });
   //persons.forEach((item) => {
   //  personList.innerHTML += createListEntry(item);
@@ -36,6 +37,7 @@ function fillUpColumns(books, persons, topics) {
 
 async function getData(url) {
   const response = await fetch(url);
+
   return response.json();
 }
 
@@ -49,7 +51,7 @@ getAllData().then(() => {
 
 async function getAllData() {
   await getData(COLL_API).then((data) => {
-    books = data.data;
+    books = JSON.parse(data);
     console.log(books);
   });
   // .then(
