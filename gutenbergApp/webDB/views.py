@@ -2,9 +2,11 @@ from django.http import JsonResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import UploadFileForm
-from .models import Book, Character#Topic, Sentence, Character2Sentence
+from .models import Book, Character, Topic, Sentence,sent2char
 import json
 from django.core import serializers
+from django.forms.models import model_to_dict
+
 
 def api_home(request,*args, **kwargs):
     return JsonResponse({"message":"Hello From the API!!!"})
@@ -19,16 +21,38 @@ def collection(request,*args, **kwargs):
 
 
 def book(request,*args, **kwargs):
-    book = Book.objects.get(id=id)
-    response = book.characters.all()
-    return JsonResponse({"data" : list(response)})
+    book = Book.objects.get(pk=1)
+    print(book)
+    #response=serializers.serialize("json",Book.objects.all())
+    return JsonResponse(model_to_dict(book))
 
 
 def character(request,*args, **kwargs):
-    character = Character.objects.get(id=id)
-    sentence = character.sentences.all()
-    response = sentence.topics.all()
-    return JsonResponse(response)
+    character = model_to_dict(Character.objects.get(pk=1))
+    sent2chars= sent2char.objects.all().values()
+    sentences=Sentence.objects.all().values()
+    topics=Topic.objects.all().values()
+
+    # CreateDistr
+    list_of_Sent=list(filter(lambda x: x['fields']['charID']==id, sent2chars))
+
+    for sent in list_of_Sent:
+        toSearch=sent['fields']['sentID']
+        sentences=list(filter(lambda x: x['pk']==toSearch,sentences))
+
+    bookid=next(filter(lambda x: x['pk']==id, character))['fields']['bookID']
+    allTopics=list(filter(lambda x: x['fields']['bookindex']==bookid, topics))
+
+    distr_=dict()
+    for topic in allTopics:
+        distr_[topic['fields']['TopicID']]= {'TopicName:':topic['fields']['Name'], 'Count':0}
+    for sent in sentences:
+        distr_[sent['fields']['topicID']]['Count']+=1
+
+
+    print(distr_)
+
+    return JsonResponse(dict_)
 
 
 def upload(request):

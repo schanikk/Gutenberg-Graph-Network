@@ -4,18 +4,18 @@ from django.contrib.postgres.fields import ArrayField
 # Create your models here.
 class Book(models.Model):
     bookID =  models.CharField(max_length=100, blank=True, default='')
-    bookName = models.CharField(max_length=200, blank=True, default='')
-    bookauthor = models.CharField(max_length=200, blank=True, default='')
-    bookAuthorYearOfBirth=models.CharField(max_length=10, blank=True,default='')
-    bookAuthorYearOfDeath=models.CharField(max_length=10, blank=True,default='')
-    bookLanguage=models.CharField(max_length=100, blank=True,default='')
-    bookSubjects=models.CharField(max_length=200, blank=True,default='')
+    bookName = models.CharField(max_length=500, blank=True, default='')
+    bookauthor = models.CharField(max_length=500, blank=True, default='')
+    bookAuthorYearOfBirth=models.CharField(max_length=50, blank=True,default='')
+    bookAuthorYearOfDeath=models.CharField(max_length=50, blank=True,default='')
+    bookLanguage=models.CharField(max_length=500, blank=True,default='')
+    bookSubjects=models.CharField(max_length=500, blank=True,default='')
     # class Meta:
     #     ordering = ['created']
 
 class Topic(models.Model):
-    topicID = models.CharField(max_length=100, blank=True, default='')
-    topicName = models.CharField(max_length=100, blank=True, default='')
+    TopicID = models.IntegerField(default=0)
+    TopicName = models.CharField(max_length=100, blank=True, default='')
 
     default_=list
     Top_n_words = ArrayField(
@@ -23,13 +23,13 @@ class Topic(models.Model):
             size=15,
             default=default_
         )
-    bookIndex = models.ForeignKey(Book, on_delete=models.CASCADE, default=0)
+    bookID = models.ForeignKey(Book, on_delete=models.CASCADE, default=0)
     # class Meta:
     #     ordering = ['created']
 
 
 class Character(models.Model):
-    name = models.CharField(max_length=100, blank=True, default='')
+    Name = models.CharField(max_length=100, blank=True, default='')
     ## bookID = models.TextField(max_length=100,blank=True,default='')
     bookID = models.ForeignKey(Book, on_delete=models.CASCADE, default=0)
     # class Meta:
@@ -37,8 +37,8 @@ class Character(models.Model):
 
 class Sentence(models.Model):
     bookID = models.ForeignKey(Book, on_delete=models.CASCADE, default=0)
-    sentenceText = models.CharField(max_length=1000,blank=True, default='')
-    sentenceIDBook=models.CharField(max_length=100, default='')
+    sentenceText = models.TextField(default='')
+    sentIDBook=models.IntegerField(default=0)
     topicID=models.ForeignKey(Topic,on_delete=models.CASCADE, default=0)
 
 
