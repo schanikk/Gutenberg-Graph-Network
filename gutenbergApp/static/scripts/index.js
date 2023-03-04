@@ -2,13 +2,13 @@ const bookList = document.querySelector(".list-books");
 const personList = document.querySelector(".list-persons");
 const topicList = document.querySelector(".list-topics");
 
-let bookItems;
-let personItems;
-let topicItems;
+let bookItems = [];
+let personItems = [];
+let topicItems = [];
 
 let books;
-let persons;
-let topics;
+let persons = [];
+let topics = [];
 
 const resetBtn = document.querySelector(".reset-btn");
 const COLL_API = "http://localhost:8000/api/collection/";
@@ -30,9 +30,9 @@ function fillUpColumns(books, persons, topics) {
   //persons.forEach((item) => {
   //  personList.innerHTML += createListEntry(item);
   //});
-  topics.forEach((item) => {
-    topicList.innerHTML += createListEntry(item, "topic");
-  });
+  //topics.forEach((item) => {
+  //  topicList.innerHTML += createListEntry(item, "topic");
+  //});
 }
 
 async function getData(url) {
@@ -44,8 +44,8 @@ async function getData(url) {
 getAllData().then(() => {
   fillUpColumns(books, persons, topics);
   bookItems = bookList.querySelectorAll("ul > li");
-  personItems = personList.querySelectorAll("ul > li");
-  topicItems = topicList.querySelectorAll("ul > li");
+  // personItems = personList.querySelectorAll("ul > li");
+  // topicItems = topicList.querySelectorAll("ul > li");
   addAllListeners();
 });
 
@@ -79,17 +79,25 @@ function addListeners(listeningItems, affectedItems, selectedListener) {
   for (let item of listeningItems) {
     console.log(item.dataset.dbid);
     item.addEventListener("click", async (e) => {
+      console.clear();
       for (let listeningItem of listeningItems) {
         listeningItem.style.opacity = "0.5";
       }
+      console.log(e.target.dataset.dbid);
+      // if (selectedListener !== e.target.innerText.match(/^[a-zA-Z]+\d{1}/)[0]) {
+      //   selectedListener = e.target.innerText.match(/^[a-zA-Z]+\d{1}/)[0];
+      //   e.target.style.opacity = "1";
+      // } else {
+      //   e.target.style.opacity = "1";
+      // }
 
-      if (selectedListener !== e.target.innerText.match(/^[a-zA-Z]+\d{1}/)[0]) {
-        selectedListener = e.target.innerText.match(/^[a-zA-Z]+\d{1}/)[0];
+      if (selectedListener !== e.target) {
+        selectedListener = e.target;
         e.target.style.opacity = "1";
       } else {
         e.target.style.opacity = "1";
       }
-      console.clear();
+
       // for (let affectedItem of affectedItems) {
       //   console.log(affectedItem);
       //   console.log(
