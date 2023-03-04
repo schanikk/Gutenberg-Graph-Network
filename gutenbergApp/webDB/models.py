@@ -6,8 +6,8 @@ class Book(models.Model):
     bookID =  models.CharField(max_length=100, blank=True, default='')
     bookName = models.CharField(max_length=200, blank=True, default='')
     bookauthor = models.CharField(max_length=200, blank=True, default='')
-    bookAuthorYearOfBirth=models.CharField(max_length=5, blank=True,default='')
-    bookAuthorYearOfDeath=models.CharField(max_length=5, blank=True,default='')
+    bookAuthorYearOfBirth=models.CharField(max_length=10, blank=True,default='')
+    bookAuthorYearOfDeath=models.CharField(max_length=10, blank=True,default='')
     bookLanguage=models.CharField(max_length=100, blank=True,default='')
     bookSubjects=models.CharField(max_length=200, blank=True,default='')
     # class Meta:
