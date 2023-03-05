@@ -34,7 +34,7 @@ Open second terminal:
 
 - docker ps
 - extract container id
-- docker exec -t -i <CONTAINERID> bash
+- docker exec -t -i CONTAINERID bash
 - python manage.py makemigrations
 - python manage.py migrate
 - python manage.py loaddata webDB/fixtures/utf9fixtures/bookFixturesSmall.json
