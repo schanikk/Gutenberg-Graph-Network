@@ -20,6 +20,25 @@ Our project makes use of already built models from "spaCy" to create and visuali
 
 ## Documentation
 
+
+## Quickstart(WIP)
+
+git clone (link)
+
+Install Docker
+
+- cd gutemberg-Graph-Network/gutenbergApp
+- docker-compose up
+
+Open second terminal:
+
+- docker ps
+- extract container id
+- docker exec -t -i <CONTAINERID> bash
+- python manage.py makemigrations
+- python manage.py migrate
+- python 
+
 ## About Us
 
 - Till
