@@ -26,6 +26,6 @@ services:
     networks:
       - djangonetwork
     
-networks:
+  networks:
     djangonetwork:
         driver: bridge
