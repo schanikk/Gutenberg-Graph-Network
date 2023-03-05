@@ -12,9 +12,10 @@ let topics = [];
 
 const resetBtn = document.querySelector(".reset-btn");
 const COLL_API = "http://localhost:8000/api/collection/";
-// const BOOK_API = "http://localhost:8000/api/book/";
+const BOOK_API = "http://localhost:8000/api/book/";
 // const CHAR_API = "http://localhost:8000/api/character/";
 
+// TODO: Anpassung der Listeneinträge für jede Column
 function createListEntry(item, ...column) {
   if (column[0] == "topic") {
     return `<li class="list-group-item d-flex justify-content-between align-items-center" data-dbid='${item.bookID}'>${item.bookName}<span class="badge text-bg-warning rounded-pill">14</span></li>`;
@@ -77,13 +78,14 @@ let selectedPerson = "";
 
 function addListeners(listeningItems, affectedItems, selectedListener) {
   for (let item of listeningItems) {
-    console.log(item.dataset.dbid);
     item.addEventListener("click", async (e) => {
       console.clear();
+      let id = e.target.dataset.dbid;
+      console.log(id);
       for (let listeningItem of listeningItems) {
         listeningItem.style.opacity = "0.5";
       }
-      console.log(e.target.dataset.dbid);
+
       // if (selectedListener !== e.target.innerText.match(/^[a-zA-Z]+\d{1}/)[0]) {
       //   selectedListener = e.target.innerText.match(/^[a-zA-Z]+\d{1}/)[0];
       //   e.target.style.opacity = "1";
@@ -91,8 +93,8 @@ function addListeners(listeningItems, affectedItems, selectedListener) {
       //   e.target.style.opacity = "1";
       // }
 
-      if (selectedListener !== e.target) {
-        selectedListener = e.target;
+      if (selectedListener !== id) {
+        selectedListener = id;
         e.target.style.opacity = "1";
       } else {
         e.target.style.opacity = "1";
@@ -118,10 +120,11 @@ function addListeners(listeningItems, affectedItems, selectedListener) {
       //     affectedItem.style.opacity = "1";
       //   }
       // }
-      // persons = await fetch(BOOK_API + item.dataset.dbid).then((response) =>
-      //   response.json().then((data) => {
-      //     return data.data;
-      //   })
+      persons = await getData(BOOK_API + id).then((data) => {
+        json = JSON.parse(data);
+        return json;
+      });
+
       if (personList.innerHTML !== "") {
         personList.innerHTML = "";
       }
