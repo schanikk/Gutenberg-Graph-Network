@@ -1,0 +1,327 @@
+[
+  {
+    "model": "webDB.Book",
+    "pk": 2,
+    "fields": {
+      "bookID": "PG22424",
+      "bookName": "Frank Merriwell Down South",
+      "bookauthor": "Standish, Burt L.",
+      "bookAuthorYearOfBirth": "1866",
+      "bookAuthorYearOfDeath": "1945",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Mexico -- Juvenile fiction', 'Adventure stories', 'Southern States -- Juvenile fiction'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 19,
+    "fields": {
+      "bookID": "PG56732",
+      "bookName": "A Vagabond Journey Around the World: A Narrative of Personal Experience",
+      "bookauthor": "Franck, Harry Alverson",
+      "bookAuthorYearOfBirth": "1881",
+      "bookAuthorYearOfDeath": "1962",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Voyages around the world'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 13,
+    "fields": {
+      "bookID": "PG20497",
+      "bookName": "Bucholz and the Detectives",
+      "bookauthor": "Pinkerton, Allan",
+      "bookAuthorYearOfBirth": "1819",
+      "bookAuthorYearOfDeath": "1884",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Detectives'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 10,
+    "fields": {
+      "bookID": "PG46883",
+      "bookName": "Goethe and Schiller: An Historical Romance",
+      "bookauthor": "M\u00fchlbach, L. (Luise)",
+      "bookAuthorYearOfBirth": "1814",
+      "bookAuthorYearOfDeath": "1873",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Goethe, Johann Wolfgang von, 1749-1832 -- Fiction', 'Schiller, Friedrich, 1759-1805 -- Fiction'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 11,
+    "fields": {
+      "bookID": "PG16644",
+      "bookName": "The Puritan Twins",
+      "bookauthor": "Perkins, Lucy Fitch",
+      "bookAuthorYearOfBirth": "1865",
+      "bookAuthorYearOfDeath": "1937",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Puritans -- Juvenile fiction', 'Frontier and pioneer life -- Massachusetts -- Juvenile fiction', 'Twins -- Juvenile fiction', 'Massachusetts -- History -- Colonial period, ca. 1600-1775 -- Juvenile fiction'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 20,
+    "fields": {
+      "bookID": "PG58204",
+      "bookName": "A History of Greek Economic Thought",
+      "bookauthor": "Trever, Albert Augustus",
+      "bookAuthorYearOfBirth": "1874",
+      "bookAuthorYearOfDeath": "1940",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Thesis (Ph. D.)', 'Economics -- Greece -- History'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 2,
+    "fields": {
+      "bookID": "PG63142",
+      "bookName": "Harry Joscelyn; vol. 1 of 3",
+      "bookauthor": "Oliphant, Mrs. (Margaret)",
+      "bookAuthorYearOfBirth": "1828",
+      "bookAuthorYearOfDeath": "1897",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Inheritance and succession -- Fiction', 'Families -- England -- Fiction'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 8,
+    "fields": {
+      "bookID": "PG20150",
+      "bookName": "Notes on My Books",
+      "bookauthor": "Conrad, Joseph",
+      "bookAuthorYearOfBirth": "1857",
+      "bookAuthorYearOfDeath": "1924",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Conrad, Joseph, 1857-1924 -- Criticism and interpretation'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 17,
+    "fields": {
+      "bookID": "PG30351",
+      "bookName": "The Cup of Fury: A Novel of Cities and Shipyards",
+      "bookauthor": "Hughes, Rupert",
+      "bookAuthorYearOfBirth": "1872",
+      "bookAuthorYearOfDeath": "1956",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'World War, 1914-1918 -- Fiction'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 12,
+    "fields": {
+      "bookID": "PG50950",
+      "bookName": "State of the Union Addresses of Barack Obama, 2009-2016",
+      "bookauthor": "Obama, Barack",
+      "bookAuthorYearOfBirth": "1961",
+      "bookAuthorYearOfDeath": "nan",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Presidents -- United States -- Messages', 'United States -- Politics and government -- Sources'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 15,
+    "fields": {
+      "bookID": "PG46168",
+      "bookName": "Experiments and Observations Tending to Illustrate the Nature and Properties of Electricity: In One Letter to Martin Folkes, Esq; President, and Two to the Royal Society",
+      "bookauthor": "Watson, William, Sir",
+      "bookAuthorYearOfBirth": "1715",
+      "bookAuthorYearOfDeath": "1787",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Electricity -- Early works to 1850'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 5,
+    "fields": {
+      "bookID": "PG22117",
+      "bookName": "Across Coveted Lands; or, a Journey from Flushing (Holland) to Calcutta Overland",
+      "bookauthor": "Landor, Arnold Henry Savage",
+      "bookAuthorYearOfBirth": "1865",
+      "bookAuthorYearOfDeath": "1924",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Iran -- Description and travel', 'Asia, Central -- Description and travel'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 18,
+    "fields": {
+      "bookID": "PG16943",
+      "bookName": "Paris: With Pen and Pencil: Its People and Literature, Its Life and Business",
+      "bookauthor": "Bartlett, D. W. (David W.)",
+      "bookAuthorYearOfBirth": "1828",
+      "bookAuthorYearOfDeath": "1912",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Paris (France) -- Description and travel', 'Paris (France) -- Social life and customs'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 6,
+    "fields": {
+      "bookID": "PG41565",
+      "bookName": "Consignment",
+      "bookauthor": "Nourse, Alan Edward",
+      "bookAuthorYearOfBirth": "1928",
+      "bookAuthorYearOfDeath": "1992",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Science fiction', 'Short stories', 'United States -- Fiction', 'Escaped prisoners -- Fiction'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 0,
+    "fields": {
+      "bookID": "PG13366",
+      "bookName": "A General History and Collection of Voyages and Travels \u2014 Volume 08",
+      "bookauthor": "Kerr, Robert",
+      "bookAuthorYearOfBirth": "1755",
+      "bookAuthorYearOfDeath": "1813",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Voyages and travels'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 4,
+    "fields": {
+      "bookID": "PG50657",
+      "bookName": "The Satires of Juvenal, Persius, Sulpicia, and Lucilius: Literally translated into English prose, with notes, chronological tables, arguments, &c.",
+      "bookauthor": "Juvenal",
+      "bookAuthorYearOfBirth": "nan",
+      "bookAuthorYearOfDeath": "nan",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Verse satire, Latin -- Translations into English', 'Juvenal -- Translations into English'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 0,
+    "fields": {
+      "bookID": "PG34297",
+      "bookName": "Angela's Business",
+      "bookauthor": "Harrison, Henry Sydnor",
+      "bookAuthorYearOfBirth": "1880",
+      "bookAuthorYearOfDeath": "1930",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Fiction'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 9,
+    "fields": {
+      "bookID": "PG23293",
+      "bookName": "Primitive Psycho-Therapy and Quackery",
+      "bookauthor": "Lawrence, Robert Means",
+      "bookAuthorYearOfBirth": "1847",
+      "bookAuthorYearOfDeath": "1935",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Medical misconceptions', 'Medicine -- History', 'Quacks and quackery', 'Mental healing'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 14,
+    "fields": {
+      "bookID": "PG57916",
+      "bookName": "Poetical Works of Robert Bridges, Volume 6",
+      "bookauthor": "Bridges, Robert",
+      "bookAuthorYearOfBirth": "1844",
+      "bookAuthorYearOfDeath": "1930",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'English poetry', 'English drama'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 1,
+    "fields": {
+      "bookID": "PG65778",
+      "bookName": "A Sagebrush Cinderella",
+      "bookauthor": "Brand, Max",
+      "bookAuthorYearOfBirth": "1892",
+      "bookAuthorYearOfDeath": "1944",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Western stories', 'Young women -- Fiction', 'Man-woman relationships -- Fiction'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 3,
+    "fields": {
+      "bookID": "PG51460",
+      "bookName": "A Husband for My Wife",
+      "bookauthor": "Stuart, William W.",
+      "bookAuthorYearOfBirth": "nan",
+      "bookAuthorYearOfDeath": "nan",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Science fiction', 'Triangles (Interpersonal relations) -- Fiction', 'Short stories', 'Time travel -- Fiction'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 1,
+    "fields": {
+      "bookID": "PG56675",
+      "bookName": "The Attic Guest: A Novel",
+      "bookauthor": "Knowles, Robert E. (Robert Edward)",
+      "bookAuthorYearOfBirth": "1868",
+      "bookAuthorYearOfDeath": "1946",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Clergy -- Fiction', 'Mate selection -- Fiction', 'Young women -- Fiction', 'Virginia -- Fiction', 'Love stories', 'Scots -- United States -- Fiction'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 16,
+    "fields": {
+      "bookID": "PG4404",
+      "bookName": "The Shaving of Shagpat; an Arabian entertainment \u2014 Volume 4",
+      "bookauthor": "Meredith, George",
+      "bookAuthorYearOfBirth": "1828",
+      "bookAuthorYearOfDeath": "1909",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Arab countries -- Fiction', 'Fantasy fiction, English'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 7,
+    "fields": {
+      "bookID": "PG20860",
+      "bookName": "The Butterfly's Ball and the Grasshopper's Feast",
+      "bookauthor": "Roscoe, William",
+      "bookAuthorYearOfBirth": "1753",
+      "bookAuthorYearOfDeath": "1831",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'Animals -- Juvenile poetry', 'Insects -- Juvenile poetry'}"
+    }
+  },
+  {
+    "model": "webDB.Book",
+    "pk": 3,
+    "fields": {
+      "bookID": "PG8446",
+      "bookName": "The Enormous Room",
+      "bookauthor": "Cummings, E. E. (Edward Estlin)",
+      "bookAuthorYearOfBirth": "1894",
+      "bookAuthorYearOfDeath": "1962",
+      "bookLanguage": "['en']",
+      "bookSubjects": "{'War stories', 'Concentration camp inmates -- Fiction', 'France -- Fiction', 'Americans -- France -- Fiction', 'Concentration camps -- Fiction', 'Autobiographical fiction', 'World War, 1914-1918 -- France -- Fiction', 'Ambulance drivers -- Fiction'}"
+    }
+  }
+]

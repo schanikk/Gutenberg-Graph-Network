@@ -1,6 +1,10 @@
 const bookList = document.querySelector(".list-books");
 const personList = document.querySelector(".list-persons");
 const topicList = document.querySelector(".list-topics");
+const personHeader = document.querySelector("#person");
+const bookHeader = document.querySelector("#book");
+
+const topicHeader = document.querySelector("#topics");
 
 let bookItems = [];
 let personItems = [];
@@ -14,6 +18,7 @@ const resetBtn = document.querySelector(".reset-btn");
 const COLL_API = "http://localhost:8000/api/collection/";
 const BOOK_API = "http://localhost:8000/api/book/";
 const CHAR_API = "http://localhost:8000/api/character/";
+const TOPIC_API = "http://localhost:8000/api/bookTopic/";
 
 // TODO: Anpassung der Listeneinträge für jede Column
 function createBookEntry(item, ...column) {
@@ -47,6 +52,8 @@ function fillUpColumns(books, persons, topics) {
   //topics.forEach((item) => {
   //  topicList.innerHTML += createListEntry(item, "topic");
   //});
+  bookHeader.innerHTML = "Books  ";
+  bookHeader.innerHTML += `<span class='badge text-bg-warning rounded-pill'>${books.length}</span>`;
 }
 
 async function getData(url) {
@@ -80,6 +87,7 @@ function addBookListeners(listeningItems, affectedItems, selectedListener) {
   for (let item of listeningItems) {
     item.addEventListener("click", async (e) => {
       console.clear();
+      topicList.innerHTML = "";
       let id = e.target.dataset.dbid;
       console.log(id);
       for (let listeningItem of listeningItems) {
@@ -108,6 +116,19 @@ function addBookListeners(listeningItems, affectedItems, selectedListener) {
           console.log(item);
         }
       });
+
+      topicsJSON = await getData(TOPIC_API + id).then((data) => {
+        json = JSON.parse(data);
+        console.log();
+        return json;
+      });
+
+      personHeader.innerHTML = "Persons  ";
+      personHeader.innerHTML += `<span class='badge text-bg-warning rounded-pill'>${persons.length}</span>`;
+
+      // topicHeader.innerHTML = "Topics  ";
+      // topicHeader.innerHTML += `<span class='badge text-bg-warning rounded-pill'>${topicsJSON.length}</span>`;
+
       persons.forEach((item) => {
         personList.innerHTML += createPersonEntry(item);
       });
@@ -142,24 +163,44 @@ function addPersonListeners(listeningItems, affectedItems, selectedListener) {
       console.log(topicsJSON);
       topics = [];
 
-      for (let i = 0; i < 500; i++) {
-        if (topicsJSON[i] == undefined) break;
-        console.log(topicsJSON[i]);
-        console.log(topicsJSON[i]["TopicName:"].split(/_/g));
-
-        tempTn = topicsJSON[i]["TopicName:"].split(/_/g);
+      Object.entries(topicsJSON).forEach((item) => {
+        console.log(item[1]);
+        tempTn = item[1]["TopicName:"].split(/_/g);
         console.log(tempTn);
         tempTn.shift();
 
         let tn = tempTn.join(" ").toUpperCase();
 
-        topicsJSON[i]["TopicName:"] = tn;
+        item[1]["TopicName:"] = tn;
 
         topics.push({
-          TopicName: topicsJSON[i]["TopicName:"],
-          Count: topicsJSON[i]["Count"],
+          TopicName: item[1]["TopicName:"],
+          Count: item[1]["Count"],
         });
-      }
+        topics.sort((a, b) => (a.Count > b.Count ? -1 : 1));
+
+        topicHeader.innerHTML = "Topics  ";
+        topicHeader.innerHTML += `<span class='badge text-bg-warning rounded-pill'>${topics.length}</span>`;
+      });
+
+      // for (let i = 0; i < 1000; i++) {
+      //   if (topicsJSON[i] == undefined) continue;
+      //   console.log("Topic id", topicsJSON[i]);
+      //   console.log("Topic Name", topicsJSON[i]["TopicName:"].split(/_/g));
+
+      //   tempTn = topicsJSON[i]["TopicName:"].split(/_/g);
+      //   console.log(tempTn);
+      //   tempTn.shift();
+
+      //   let tn = tempTn.join(" ").toUpperCase();
+
+      //   topicsJSON[i]["TopicName:"] = tn;
+
+      //   topics.push({
+      //     TopicName: topicsJSON[i]["TopicName:"],
+      //     Count: topicsJSON[i]["Count"],
+      //   });
+      // }
 
       console.log(topics);
 
@@ -184,20 +225,26 @@ function addAllListeners() {
 
   resetBtn.addEventListener("click", (e) => {
     for (let bookItem of bookItems) {
-      bookItem.classList.remove("d-none");
-      bookItem.classList.add("d-flex");
+      // bookItem.classList.remove("d-none");
+      // bookItem.classList.add("d-flex");
       bookItem.style.opacity = "1";
     }
-    for (let personItem of personItems) {
-      personItem.classList.remove("d-none");
-      personItem.classList.add("d-flex");
-      personItem.style.opacity = "1";
-    }
-    for (let topicItem of topicItems) {
-      topicItem.classList.remove("d-none");
-      topicItem.classList.add("d-flex");
-      topicItem.style.opacity = "1";
-    }
+    // for (let personItem of personItems) {
+    //   personItem.classList.remove("d-none");
+    //   personItem.classList.add("d-flex");
+    //   personItem.style.opacity = "1";
+    // }
+    // for (let topicItem of topicItems) {
+    //   topicItem.classList.remove("d-none");
+    //   topicItem.classList.add("d-flex");
+    //   topicItem.style.opacity = "1";
+    // }
+    topicList.innerHTML = "";
+    personList.innerHTML = "";
+    selectedBook = "";
+    selectedPerson = "";
+    topicHeader.innerHTML = "Topics";
+    personHeader.innerHTML = "Persons";
   });
 }
 

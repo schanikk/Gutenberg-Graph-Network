@@ -1,8 +1,15 @@
+
+html{
+    background-color: #d9eaef;
+}
 body{
     color: darkred;
-    padding: 50px;
+    background-color: #d9eaef !important;
+  
 }
-
+h1{
+    font-family: 'Playfair Display', serif;
+}
 .d-none{
     display: none;
 }
@@ -14,17 +21,35 @@ body{
     flex-direction: column;
     margin: auto;
     
+    
 }
 
 .header{
     text-align: center;
+    background-color: #aa873b;
+    margin-top: 30px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    
+}
+.header p{
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-style: italic;
+    
 }
 
 .data-container{
     display: flex;
     justify-content: space-evenly;
     flex-basis: 1 1 1;
-    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: hsla(41, 65%, 45%, 0.5);
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
 }
 
 .col-books  li:hover, .col-persons  li:hover{
@@ -34,5 +59,20 @@ body{
 
 .reset-btn{
     align-self: flex-start;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+h3{
+    text-align: center;
+    padding: 10px;
+}
+.list-group{
+    border-style: solid;
+    border-color:  hsla(41, 65%, 45%, 0.5);
+    border-width: 5px;
+    overflow-y: scroll;
+    height: 500px;
+  
 }
 

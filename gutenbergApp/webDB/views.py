@@ -57,8 +57,6 @@ def characters(request,id):
     return JsonResponse(res2, safe=False)
 
 
-
-
 def character(request,id):
     sent2chars= sent2char.objects.all()
     sentences=Sentence.objects.all()
@@ -78,31 +76,94 @@ def character(request,id):
     for top in topics:
         topics_.append(model_to_dict(top))
 
-    print(topics_)
-    
+    #print(topics_)
+    #print("sent2xhars_",sent2chars_)
+    print("charid to filter:", id)  
+    print(type(id), type(sent2chars_[0]["charID"]))
     # CreateDistr
-    list_of_Sent=list(filter(lambda x: x['charID']==id, sent2chars_))
+    list_of_Sent=list(filter(lambda x: x['charID']==id, sent2chars_))       
+
+    sentences2 = list();
+    
+    #print("list_ofSents: ", list_of_Sent)
 
     for sent in list_of_Sent:
         toSearch=sent['sentID']
-        sentences=list(filter(lambda x: x['id']==toSearch,sentences_))
+        print("to Search log",toSearch)
+        sentences2.extend(list(filter(lambda x: x['id']==toSearch,sentences_)))
 
     bookid=Character.objects.get(pk=id).bookID.pk
-    print(bookid)
+    #print(bookid)
     allTopics=list(filter(lambda x: x['bookID']==bookid, topics_))
         
-    print(allTopics)
-
+    #print(allTopics)
+    print(sentences2)
 
     distr_=dict()
     for topic in allTopics:
-        print(topic)
-        distr_[topic['TopicID']]= {'TopicName:':topic['TopicName'], 'Count':0}
-    for sent in sentences:
+        #print(topic)
+        distr_[topic['id']]= {'TopicName:':topic['TopicName'], 'Count':0}
+    print("Hello", distr_)
+    for sent in sentences2:
+        #print(sent.values())
         print(sent)
         distr_[sent['topicID']]['Count']+=1
+    #print(distr_)
+    #print(allTopics)   
+    return JsonResponse(json.dumps(distr_), safe=False)
 
-    return JsonResponse(distr_)
+def bookTopics(request,id):
+    topics=Topic.objects.filter(bookID=id)
+    res = serializers.serialize("json", topics)
+    return JsonResponse(res, safe=False)
+
+
+# def character(request,id):
+#     sent2chars= sent2char.objects.all()
+#     sentences1=Sentence.objects.all()
+#     topics=Topic.objects.all()
+
+
+#     sent2chars_=list()
+#     for s2c in sent2chars:
+#         sent2chars_.append(model_to_dict(s2c))
+
+
+#     sentences_=list()
+#     for sent in sentences1:
+#         sentences_.append(model_to_dict(sent))
+
+#     topics_ = list()
+#     for top in topics:
+#         topics_.append(model_to_dict(top))
+
+   
+    
+#     # CreateDistr
+#     list_of_Sent=list(filter(lambda x: x['charID']==id, sent2chars_))
+#     sentences2 = list()
+
+#     for sent in list_of_Sent:
+#         toSearch=sent['sentID']
+#         sentences2=list(filter(lambda x: x['id']==toSearch,sentences_))
+
+#     bookid=Character.objects.get(pk=id).bookID.pk
+#     print(bookid)
+#     allTopics=list(filter(lambda x: x['bookID']==bookid, topics_))
+        
+   
+
+
+#     distr_=dict()
+#     for topic in allTopics:
+        
+#         distr_[topic['TopicID']]= {'TopicName:':topic['TopicName'], 'Count':0}
+#     for sent in sentences2:
+#         print(sentences2.__len__())
+       
+#         distr_[sent['TopicID']]['Count'] = distr_[sent['TopicID']]['Count'] + 1
+#     response = json.dumps(distr_)
+#     return JsonResponse(response, safe=False)
 
 
 def upload(request):
