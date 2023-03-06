@@ -20,7 +20,6 @@ const BOOK_API = "http://localhost:8000/api/book/";
 const CHAR_API = "http://localhost:8000/api/character/";
 const TOPIC_API = "http://localhost:8000/api/bookTopic/";
 
-// TODO: Anpassung der Listeneinträge für jede Column
 function createBookEntry(item, ...column) {
   if (column[0] == "topic") {
     return `<li class="list-group-item d-flex justify-content-between align-items-center" data-dbid='${
@@ -46,12 +45,7 @@ function fillUpColumns(books, persons, topics) {
     console.log(item.fields);
     bookList.innerHTML += createBookEntry(item);
   });
-  //persons.forEach((item) => {
-  //  personList.innerHTML += createListEntry(item);
-  //});
-  //topics.forEach((item) => {
-  //  topicList.innerHTML += createListEntry(item, "topic");
-  //});
+
   bookHeader.innerHTML = "Books  ";
   bookHeader.innerHTML += `<span class='badge text-bg-warning rounded-pill'>${books.length}</span>`;
 }
@@ -75,10 +69,6 @@ async function getAllData() {
     console.log(books);
   });
 }
-
-// function sleep(ms) {
-//   return new Promise((resolve) => setTimeout(resolve, ms));
-// }
 
 let selectedBook = "";
 let selectedPerson = "";
@@ -123,11 +113,11 @@ function addBookListeners(listeningItems, affectedItems, selectedListener) {
         return json;
       });
 
+      personList.style.cssText =
+        "border-style: solid; border-color:  hsla(41, 65%, 45%, 0.5); border-width: 5px; overflow-y: scroll; height: 500px";
+
       personHeader.innerHTML = "Persons  ";
       personHeader.innerHTML += `<span class='badge text-bg-warning rounded-pill'>${persons.length}</span>`;
-
-      // topicHeader.innerHTML = "Topics  ";
-      // topicHeader.innerHTML += `<span class='badge text-bg-warning rounded-pill'>${topicsJSON.length}</span>`;
 
       persons.forEach((item) => {
         personList.innerHTML += createPersonEntry(item);
@@ -183,24 +173,8 @@ function addPersonListeners(listeningItems, affectedItems, selectedListener) {
         topicHeader.innerHTML += `<span class='badge text-bg-warning rounded-pill'>${topics.length}</span>`;
       });
 
-      // for (let i = 0; i < 1000; i++) {
-      //   if (topicsJSON[i] == undefined) continue;
-      //   console.log("Topic id", topicsJSON[i]);
-      //   console.log("Topic Name", topicsJSON[i]["TopicName:"].split(/_/g));
-
-      //   tempTn = topicsJSON[i]["TopicName:"].split(/_/g);
-      //   console.log(tempTn);
-      //   tempTn.shift();
-
-      //   let tn = tempTn.join(" ").toUpperCase();
-
-      //   topicsJSON[i]["TopicName:"] = tn;
-
-      //   topics.push({
-      //     TopicName: topicsJSON[i]["TopicName:"],
-      //     Count: topicsJSON[i]["Count"],
-      //   });
-      // }
+      topicList.style.cssText =
+        "border-style: solid; border-color:  hsla(41, 65%, 45%, 0.5); border-width: 5px; overflow-y: scroll; height: 500px";
 
       console.log(topics);
 
@@ -208,11 +182,6 @@ function addPersonListeners(listeningItems, affectedItems, selectedListener) {
         topicList.innerHTML = "";
       }
 
-      // persons.map((item) => {
-      //   if (item.fields["Name"].match(/.*-+.*/)) {
-      //     console.log(item);
-      //   }
-      // });
       topics.forEach((item) => {
         topicList.innerHTML += createTopicEntry(item);
       });
@@ -225,50 +194,16 @@ function addAllListeners() {
 
   resetBtn.addEventListener("click", (e) => {
     for (let bookItem of bookItems) {
-      // bookItem.classList.remove("d-none");
-      // bookItem.classList.add("d-flex");
       bookItem.style.opacity = "1";
     }
-    // for (let personItem of personItems) {
-    //   personItem.classList.remove("d-none");
-    //   personItem.classList.add("d-flex");
-    //   personItem.style.opacity = "1";
-    // }
-    // for (let topicItem of topicItems) {
-    //   topicItem.classList.remove("d-none");
-    //   topicItem.classList.add("d-flex");
-    //   topicItem.style.opacity = "1";
-    // }
+
     topicList.innerHTML = "";
     personList.innerHTML = "";
     selectedBook = "";
     selectedPerson = "";
     topicHeader.innerHTML = "Topics";
     personHeader.innerHTML = "Persons";
+    topicList.style.cssText = "";
+    personList.style.cssText = "";
   });
 }
-
-// window.addEventListener("load", function () {
-//   Object.keys(obj).forEach((item) => {
-//     bookList.innerHTML +=
-//       "<li class='list-group-item d-flex justify-content-between align-items-center'>" +
-//       item +
-//       "<span class='badge text-bg-info rounded-pill'>14</span></li>";
-//   });
-//   Object.keys(obj).forEach((item) => {
-//     personList.innerHTML +=
-//       "<li class='list-group-item d-flex justify-content-between align-items-center'>" +
-//       item +
-//       "<span class='badge text-bg-info rounded-pill'>14</span></li>";
-//   });
-//   Object.keys(obj).forEach((item) => {
-//     topicList.innerHTML +=
-//       "<li class='list-group-item d-flex justify-content-between align-items-center'>" +
-//       item +
-//       "<span class='badge text-bg-info rounded-pill'>14</span></li>";
-//   });
-//   bookItems = bookList.querySelectorAll("ul > li");
-//   personItems = personList.querySelectorAll("ul > li");
-//   topicItems = topicList.querySelectorAll("ul > li");
-//   addAllListeners();
-// });
