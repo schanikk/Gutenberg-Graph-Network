@@ -31,7 +31,14 @@ function createBookEntry(item, ...column) {
   }'>${item.fields.bookName.toUpperCase()}</li>`;
 }
 function createTopicEntry(item, ...column) {
-  return `<li class="list-group-item d-flex justify-content-between align-items-center" data-dbid=''>${item.TopicName}<span class="badge text-bg-warning rounded-pill">${item.Count}</span></li>`;
+  if (parseInt(item.Count) == 0) {
+    console.log("HELLO");
+    let li = `<li style='opacity: 0.5;' class="list-group-item d-flex justify-content-between align-items-center" data-dbid=''>${item.TopicName}<span class="badge text-bg-warning rounded-pill">${item.Count}</span></li>`;
+
+    return li;
+  } else {
+    return `<li class="list-group-item d-flex justify-content-between align-items-center" data-dbid=''>${item.TopicName}<span class="badge text-bg-warning rounded-pill">${item.Count}</span></li>`;
+  }
 }
 
 function createPersonEntry(item, ...column) {
@@ -118,7 +125,8 @@ function addBookListeners(listeningItems, affectedItems, selectedListener) {
 
       personHeader.innerHTML = "Persons  ";
       personHeader.innerHTML += `<span class='badge text-bg-warning rounded-pill'>${persons.length}</span>`;
-
+      topicHeader.innerHTML = "Topics";
+      topicList.style.cssText = "";
       persons.forEach((item) => {
         personList.innerHTML += createPersonEntry(item);
       });
