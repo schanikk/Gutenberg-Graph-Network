@@ -29,35 +29,35 @@ def book(request,id):
     #response=serializers.serialize("json",Book.objects.all())
     return JsonResponse(res,safe=False)
 
-def characters(request,id):
-    rel_sent2char = sent2char.objects.filter(charID=id)
-    sents_ = list()
-    for rel in rel_sent2char:
-        sents_.append(rel.sentID)
-
-    topics_ = list()
-    for sent in sents_:
-        topics_.append(sent.topicID)
-    print(sents_)
-    print(topics_)
-
-
-
-    res = serializers.serialize("json", sents_)
-    res2 = serializers.serialize("json", topics_)
-
-    characterBook = Character.objects.get(pk=id)
-    all_topics = Topic.objects.filter(bookID=characterBook.bookID)
-
-    relTopics=list()
-    for topic in all_topics:
-        relTopics.append(model_to_dict(topic))
-
-
-    return JsonResponse(res2, safe=False)
-
-
 def character(request,id):
+    """
+
+    Createas Distribution for the specified Character
+
+    """
+
+    bookid=Character.objects.get(pk=id).bookID.pk
+    topics=Topic.objects.filter(bookID=bookid)
+    sent2char_ = sent2char.objects.filter(charID=id)
+    print(topics)
+    res = dict()
+    for top in topics:
+        topic = model_to_dict(top)
+      
+        res[topic['id']]={'TopicName:':topic['TopicName'], 'Count':0}
+
+    for sent in sent2char_:
+        try:
+            key=sent.sentID.topicID.pk
+            print("sucessfully:",key)
+            res[key]['Count']+=1
+        except:
+            print("Wrong sentence", sent.sentID.bookID)
+    
+    return JsonResponse(json.dumps(res), safe=False)
+
+
+def characters(request,id):
     sent2chars= sent2char.objects.all()
     sentences=Sentence.objects.all()
     topics=Topic.objects.all()
@@ -107,7 +107,8 @@ def character(request,id):
     for sent in sentences2:
         #print(sent.values())
         print(sent)
-        distr_[sent['topicID']]['Count']+=1
+        if sent['topicID'] in distr_.keys():
+            distr_[sent['topicID']]['Count']+=1
     #print(distr_)
     #print(allTopics)   
     return JsonResponse(json.dumps(distr_), safe=False)
