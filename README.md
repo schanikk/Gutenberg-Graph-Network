@@ -16,10 +16,11 @@
 
 Our project makes use of already built models from "spaCy" and the Topic Modelling Algorithm BERTopic to create and visualize associations between characters and topics in a book from the [Project Gutenberg](https://www.gutenberg.org/) or from the complete corpus.
 
-## Technologies
+## About Us
 
-## Documentation
-
+- Till
+- Sanaz
+- Martin
 
 ## Quickstart(WIP)
 
@@ -96,8 +97,8 @@ python manage.py loaddata webDB/fixtures/BigFixtures/sent2charFixturesSmall.json
 
 Now the Application is ready to use! Have Fun to pick a book and start Filtering!!
 
-## About Us
+## Technologies
 
-- Till
-- Sanaz
-- Martin
+Techstack: Python, Django, Docker, PostgresSQL, HTML/CSS/JS
+
+## Documentation
