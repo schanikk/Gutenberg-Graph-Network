@@ -71,7 +71,13 @@ Running migrations:
 
 Again the warning can be ignored, as it indicates that the STATICFILE_DIRS doesnt exist, however the static files are caught by Django. When you run this command you will see several changes applied. 
 
-Next we need to initalize the database with some data so the Application can visualize the relationship between Characters and Topics. We do this with the built-in loaddata command which uses Fixtures to upload data into the database. More about Fixtures can be found here(https://docs.djangoproject.com/en/4.1/howto/initial-data/). The order of loading the data is important, because there are severeal relations between the tables. The correct order is books, character, topics, sentences, sent2char.
+Next we need to initalize the database with some data so the Application can visualize the relationship between Characters and Topics. We do this with the built-in loaddata command which uses Fixtures to upload data into the database. More about Fixtures can be found here(https://docs.djangoproject.com/en/4.1/howto/initial-data/). The order of loading the data is important, because there are severeal relations between the tables. 
+The correct order is: 
+1. books 
+2. character
+3. topics 
+4. sentences
+5. sent2char
 
 NOTE: The final Fixtures for 81 Books is too big for the GitHub Repository, therefore we had to upload them to an external service (Mafiasi) where you need to download them, extract them from the ZIP and place them into a directory in fixtures/ with the name BigFixtures.
 
@@ -91,21 +97,21 @@ Have Fun to pick a book and start filtering!!
 
 ## Technologies/Data
 
-- FrontEnd:
+- **FrontEnd**:
 HTML, CSS, Vanilla JS, Bootstrap
 
-- BackEnd:
+- **BackEnd**:
   - Logic: Django
   - Database: PostgreSQL
   
-- Containerization: 
+- **Containerization**: 
 Docker
 
-- Preprocessing:
+- **Preprocessing**:
 spaCy
 BERTTopic
 
-- Data:
+- **Data**:
 Gutenberg Corpus Books
 
 ## Architecture Overview
