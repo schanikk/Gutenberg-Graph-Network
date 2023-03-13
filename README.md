@@ -103,21 +103,21 @@ Have Fun to pick a book and start filtering!!
 
 ## Technologies/Data
 
-- **FrontEnd**:
+- **FrontEnd**: User Interface, makes API calls
 HTML, CSS, Vanilla JS, Bootstrap
 
 - **BackEnd**:
-  - Logic: Django
-  - Database: PostgreSQL
+  - Logic: Django --> Provides the API for FronEnd, queries the database on API CALL
+  - Database: PostgreSQL --> Provides the data once queried
   
-- **Containerization**: 
+- **Containerization**: Package it up into one entity
 Docker
 
-- **Preprocessing**:
+- **Preprocessing**: Applying the ENR and Topic Modeling
 spaCy
 BERTTopic
 
-- **Data**:
+- **Data**: Data displayed
 Gutenberg Corpus Books
 
 ## Architecture Overview
