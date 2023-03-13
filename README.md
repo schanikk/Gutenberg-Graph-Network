@@ -97,3 +97,4 @@ Now the Application is ready to use! Have Fun to pick a book and start Filtering
 Techstack: Python, Django, Docker, PostgresSQL, HTML/CSS/JS
 
 ## Architecture Overview
+![image](https://user-images.githubusercontent.com/56537013/224675408-20296718-35de-4b6b-bd70-3d2373ffb468.png)
