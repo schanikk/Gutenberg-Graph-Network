@@ -3,27 +3,21 @@
 ## Useful links 
 | Links  |Beschreibung   |
 |---|---|
-| [Python Dokumentation](https://docs.python.org/3.11/library/index.html)  | Doku zu Python.  |
-| [Project Gutenberg](https://www.gutenberg.org/)  | Ein Projekt auf dem unserer Projekt aufbaut.  |
-| [Natural Language Toolkit](https://www.nltk.org/) | Website zum ziehen von Daten  |
+| [Python Dokumentation](https://docs.python.org/3.11/library/index.html) | Python Docs |
+| [Project Gutenberg](https://www.gutenberg.org/)  | Actual Gutenberg Project  |
+| [Natural Language Toolkit](https://www.nltk.org/) | Useful data  |
 | [The Standardized Project Gutenberg Corpus](https://github.com/pgcorpus/gutenberg) | Used for Data Extraction  |
-| [spaCy](https://spacy.io/)  | Modelle für Entity Name Recognition (ENR) |
-| [BERTopic](https://github.com/MaartenGr/BERTopic)  | Modell für Topic Modelling  |
-| [GitHub Projectboard](https://github.com/users/schanikk/projects/3/views/1?layout=board)  | Unser Projektboard mit Tickets  |
-| [Beispielprojekt zu Gutenberg](https://dharc-org.github.io/mythlod/index.html)  | Beispielimplementation unserers Projekts  |
+| [spaCy](https://spacy.io/)  | Models for Entity Name Recognition (ENR) |
+| [BERTopic](https://github.com/MaartenGr/BERTopic)  | Model for Topic Modelling  |
+| [GitHub Projectboard](https://github.com/users/schanikk/projects/3/views/1?layout=board)  | Our Projectboard in HitHub  |
+| [Beispielprojekt zu Gutenberg](https://dharc-org.github.io/mythlod/index.html)  | Different implementation of the project (not ours)  |
 |   |   |
 
 ## About the Project
 
 Our project makes use of already built models from "spaCy" and the Topic Modelling Algorithm BERTopic to create and visualize associations between characters and topics in a book from the [Project Gutenberg](https://www.gutenberg.org/) or from the complete corpus.
 
-## About Us
-
-- Till
-- Sanaz
-- Martin
-
-## Quickstart(WIP)
+## How To Run The App
 
 First Clone the Github Repository into the desired directory
 
@@ -98,8 +92,8 @@ python manage.py loaddata webDB/fixtures/BigFixtures/sent2charFixturesSmall.json
 
 Now the Application is ready to use! Have Fun to pick a book and start Filtering!!
 
-## Technologies
+## Technologies/Data
 
 Techstack: Python, Django, Docker, PostgresSQL, HTML/CSS/JS
 
-## Documentation
+## Architecture Overview
