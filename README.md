@@ -91,21 +91,21 @@ Have Fun to pick a book and start filtering!!
 
 ## Technologies/Data
 
-FrontEnd:
+- FrontEnd:
 HTML, CSS, Vanilla JS, Bootstrap
 
-BackEnd:
+- BackEnd:
   - Logic: Django
   - Database: PostgreSQL
   
-Containerization: 
+- Containerization: 
 Docker
 
-Preprocessing:
+- Preprocessing:
 spaCy
 BERTTopic
 
-Data:
+- Data:
 Gutenberg Corpus Books
 
 ## Architecture Overview
