@@ -11,6 +11,12 @@ In addtion to the book's characters and the character's topics, a counter next t
 ![image](https://user-images.githubusercontent.com/56537013/224679979-259fd15b-faba-46c3-bcbb-0cb14b054fe8.png)
 *Starting screen*
 
+![image](https://user-images.githubusercontent.com/56537013/224683429-fb10121e-3a94-4481-bd2a-01661176e29d.png)
+*Picked a book only*
+
+![image](https://user-images.githubusercontent.com/56537013/224683297-7ba86bea-f1c9-42e7-9ced-5aa3a07a6353.png)
+*Picked a book and a character*
+
 
 
 ## How To Run The App
