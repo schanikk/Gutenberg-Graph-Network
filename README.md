@@ -91,7 +91,22 @@ Have Fun to pick a book and start filtering!!
 
 ## Technologies/Data
 
-Techstack: Python, Django, Docker, PostgresSQL, HTML/CSS/JS
+FrontEnd:
+HTML, CSS, Vanilla JS, Bootstrap
+
+BackEnd:
+  Logic: Django
+  Database: PostgreSQL
+  
+Containerization: 
+Docker
+
+Preprocessing:
+spaCy
+BERTTopic
+
+Data:
+Gutenberg Corpus Books
 
 ## Architecture Overview
 ![image](https://user-images.githubusercontent.com/56537013/224675408-20296718-35de-4b6b-bd70-3d2373ffb468.png)
