@@ -103,7 +103,7 @@ Have Fun to pick a book and start filtering!!
 
 ## Technologies/Data
 
-- **FrontEnd**: User Interface, makes API calls
+- **FrontEnd**: User Interface, makes API calls <br />
 HTML, CSS, Vanilla JS, Bootstrap
 
 - **BackEnd**:
