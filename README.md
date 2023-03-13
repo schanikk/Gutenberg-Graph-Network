@@ -1,18 +1,5 @@
 # Gutenberg-Graph-Network
 
-## Useful links 
-| Links  |Beschreibung   |
-|---|---|
-| [Python Dokumentation](https://docs.python.org/3.11/library/index.html) | Python Docs |
-| [Project Gutenberg](https://www.gutenberg.org/)  | Actual Gutenberg Project  |
-| [Natural Language Toolkit](https://www.nltk.org/) | Useful data  |
-| [The Standardized Project Gutenberg Corpus](https://github.com/pgcorpus/gutenberg) | Used for Data Extraction  |
-| [spaCy](https://spacy.io/)  | Models for Entity Name Recognition (ENR) |
-| [BERTopic](https://github.com/MaartenGr/BERTopic)  | Model for Topic Modelling  |
-| [GitHub Projectboard](https://github.com/users/schanikk/projects/3/views/1?layout=board)  | Our Projectboard in HitHub  |
-| [Beispielprojekt zu Gutenberg](https://dharc-org.github.io/mythlod/index.html)  | Different implementation of the project (not ours)  |
-|   |   |
-
 ## About the Project
 
 Our project makes use of already built models from "spaCy" and the Topic Modelling Algorithm BERTopic to create and visualize associations between characters and topics in a book from the [Project Gutenberg](https://www.gutenberg.org/) or from the complete corpus.
@@ -98,3 +85,16 @@ Techstack: Python, Django, Docker, PostgresSQL, HTML/CSS/JS
 
 ## Architecture Overview
 ![image](https://user-images.githubusercontent.com/56537013/224675408-20296718-35de-4b6b-bd70-3d2373ffb468.png)
+
+## Useful links 
+| Links  |Beschreibung   |
+|---|---|
+| [Python Dokumentation](https://docs.python.org/3.11/library/index.html) | Python Docs |
+| [Project Gutenberg](https://www.gutenberg.org/)  | Actual Gutenberg Project  |
+| [Natural Language Toolkit](https://www.nltk.org/) | Useful data  |
+| [The Standardized Project Gutenberg Corpus](https://github.com/pgcorpus/gutenberg) | Used for Data Extraction  |
+| [spaCy](https://spacy.io/)  | Models for Entity Name Recognition (ENR) |
+| [BERTopic](https://github.com/MaartenGr/BERTopic)  | Model for Topic Modelling  |
+| [GitHub Projectboard](https://github.com/users/schanikk/projects/3/views/1?layout=board)  | Our Projectboard in HitHub  |
+| [Beispielprojekt zu Gutenberg](https://dharc-org.github.io/mythlod/index.html)  | Different implementation of the project (not ours)  |
+|   |   |
