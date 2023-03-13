@@ -110,14 +110,14 @@ HTML, CSS, Vanilla JS, Bootstrap
   - Logic: Django --> Provides the API for FronEnd, queries the database on API CALL
   - Database: PostgreSQL --> Provides the data once queried
   
-- **Containerization**: Package it up into one entity
+- **Containerization**: Package it up into one entity <br />
 Docker
 
-- **Preprocessing**: Applying the ENR and Topic Modeling
+- **Preprocessing**: Applying the ENR and Topic Modeling <br />
 spaCy
 BERTTopic
 
-- **Data**: Data displayed
+- **Data**: Data displayed <br />
 Gutenberg Corpus Books
 
 ## Architecture Overview
