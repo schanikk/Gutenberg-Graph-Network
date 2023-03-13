@@ -95,8 +95,8 @@ FrontEnd:
 HTML, CSS, Vanilla JS, Bootstrap
 
 BackEnd:
-  Logic: Django
-  Database: PostgreSQL
+  - Logic: Django
+  - Database: PostgreSQL
   
 Containerization: 
 Docker
