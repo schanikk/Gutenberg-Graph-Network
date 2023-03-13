@@ -3,6 +3,14 @@
 ## About the Project
 
 Our project makes use of already built models from "spaCy" and the Topic Modelling Algorithm BERTopic to create and visualize associations between characters and topics in a book from the [Project Gutenberg](https://www.gutenberg.org/) or from the complete corpus.
+Inside our App you are able to pick a book and make it display every character of that book, which has been found by the ENT-model. Once displayed, you can pick a character and every topic which is associated with that character is shown to you. The topics were found beforehand by BERTTopic. 
+
+Once done with the filtering, you can reset your selection to start anew by clicking on the red resetbutton or just pick a different book.
+In addtion to the book's characters and the character's topics, a counter next to the columns shows you the total number of books which are loaded into the app, the number of characters found in a book and the number of topics in a book (derived from the character-topic association).
+
+![image](https://user-images.githubusercontent.com/56537013/224679979-259fd15b-faba-46c3-bcbb-0cb14b054fe8.png)
+
+
 
 ## How To Run The App
 
@@ -12,9 +20,9 @@ First Clone the Github Repository into the desired directory
 git clone https://github.com/schanikk/Gutenberg-Graph-Network.git
 
 ```
-Next you need to have Docker Installed, if you dont have Docker already installed check the following Link https://www.docker.com/products/docker-desktop/
+Next you need to have Docker Installed, if you don't have Docker already installed check the following Link https://www.docker.com/products/docker-desktop/
 
-If Docker is installed Change into the web Application Directory and Start Docker-Compose
+Once Docker is installed, change into the Web Application Directory and Start docker-Compose
 
 ```bash
 
@@ -23,7 +31,7 @@ docker-compose up
 
 ```
 
-Next Step is to open the Docker bash of the Django Web app Container. We do this by first checking the Container id and then execute the bash inside the desired container by following the steps below. The Container ID we need is the one from the Image gutenbergapp-web. In this example it is 5f794608962e.
+Next Step is to open the Docker bash of the Django Web App container. We do this by first checking the Container id and then execute the bash inside the desired container by following the steps below. The Container ID we need is the one from the image gutenbergapp-web. In this example it is 5f794608962e.
 
 
 ```
@@ -36,7 +44,7 @@ CONTAINER ID   IMAGE              COMMAND                  CREATED      STATUS  
 docker exec -t -i 5f794608962e bash
 ```
 
-First we Check if there are any migrations to make by running the following Command. Normaly there shouldnt be any to make, but just to be sure we check it anyway.
+First we check if there are any migrations to make by running the following Command. Normally there shouldn't be any to make, but just to be sure we check it anyway.
 ```bash
 python manage.py makemigrations
 
@@ -60,11 +68,11 @@ Running migrations:
 
 ```
 
-Again the Warning can be ignored, as its indicates that the STATICFILE_DIRS doesnt exist, however the Static Files are caught by Django. If u run this command u will see several Changes Applied. 
+Again the warning can be ignored, as it indicates that the STATICFILE_DIRS doesnt exist, however the static files are caught by Django. When you run this command you will see several changes applied. 
 
-Next we need to initalize the Database with some Data so the Application can visualize the Relationship between Characters and Topics. We do this with the build in loaddata command which uses Fixtures to Upload Data into the Database. More about Fixtures can be found here(https://docs.djangoproject.com/en/4.1/howto/initial-data/). The Order of loading the Data is important, because there are severeal Relations between the Tables. The Correct order is books, character, topics, sentences, sent2char.
+Next we need to initalize the database with some data so the Application can visualize the relationship between Characters and Topics. We do this with the built-in loaddata command which uses Fixtures to upload data into the database. More about Fixtures can be found here(https://docs.djangoproject.com/en/4.1/howto/initial-data/). The order of loading the data is important, because there are severeal relations between the tables. The correct order is books, character, topics, sentences, sent2char.
 
-NOTE: The Final Fixtures for 81 Books is too big for the GitHub Repository, therefore we had to upload them to a extern service (Mafiasi) where u need to download them extract them from the ZIP and place them into a directory in fixtures/ with the name BigFixtures.
+NOTE: The final Fixtures for 81 Books is too big for the GitHub Repository, therefore we had to upload them to an external service (Mafiasi) where you need to download them, extract them from the ZIP and place them into a directory in fixtures/ with the name BigFixtures.
 
 Fixtures Link: https://cloud.mafiasi.de/s/Sgb72AGeaBB3gWM
 
@@ -77,7 +85,8 @@ python manage.py loaddata webDB/fixtures/BigFixtures/sentencesFixturesSmall.json
 python manage.py loaddata webDB/fixtures/BigFixtures/sent2charFixturesSmall.json
 ```
 
-Now the Application is ready to use! Have Fun to pick a book and start Filtering!!
+Now the Application is ready to use! You can access it via localhost:8000/gutenberg.
+Have Fun to pick a book and start filtering!!
 
 ## Technologies/Data
 
