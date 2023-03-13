@@ -9,6 +9,7 @@ Once done with the filtering, you can reset your selection to start anew by clic
 In addtion to the book's characters and the character's topics, a counter next to the columns shows you the total number of books which are loaded into the app, the number of characters found in a book and the number of topics in a book (derived from the character-topic association).
 
 ![image](https://user-images.githubusercontent.com/56537013/224679979-259fd15b-faba-46c3-bcbb-0cb14b054fe8.png)
+*Starting screen*
 
 
 
