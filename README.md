@@ -114,8 +114,8 @@ HTML, CSS, Vanilla JS, Bootstrap
 Docker
 
 - **Preprocessing**: Applying the ENR and Topic Modeling <br />
-spaCy
-BERTTopic
+  - spaCy (ENR)
+  - BERTTopic (Topic Modeling)
 
 - **Data**: Data displayed <br />
 Gutenberg Corpus Books
